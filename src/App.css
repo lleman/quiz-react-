@@ -60,7 +60,14 @@ button:hover {
   margin:300px auto;
   font-size: 30px;
   font-weight: bold;
-  color: red;
+  color: rgb(87, 1, 87);
   text-transform: uppercase;
 }
-
+.restartBtn{
+  width: max-content !important;
+  padding: 10px 25px !important;
+  margin-top: 20px;
+}
+#score{
+  color:red;
+}

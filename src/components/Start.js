@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Questions from "./Questions";
-import '../App.css';
+import "../App.css";
 import { Switch, Route, Link } from "react-router-dom";
 
 function Start() {
   const [screen, setScreen] = useState(true);
 
-    const handleGo = () => {
-      setScreen(false);
-    };
- 
+  const handleGo = () => {
+    setScreen(false);
+  };
+
   return (
     <div>
       {screen ? (
@@ -20,9 +20,9 @@ function Start() {
           </Link>
         </div>
       ) : (
-          <Route exact path="/startquiz">
-            <Questions />
-          </Route>
+        <Route exact path="/startquiz">
+          <Questions />
+        </Route>
       )}
     </div>
   );

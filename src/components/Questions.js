@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { Switch, Route, Link } from "react-router-dom";
+import Start from "./Start";
 import "../App.css";
 
 function Questions() {
   const questions = [
     {
-      question: "What is the capital of Italy?",
+      question: "Select the front-end programming language",
       options: [
-        { answer: "London", correct: false },
-        { answer: "Paris", correct: false },
-        { answer: "Rome", correct: true },
+        { answer: "C#", correct: false },
+        { answer: "Java", correct: false },
+        { answer: "Javascript", correct: true },
       ],
     },
 
@@ -68,14 +70,20 @@ function Questions() {
     <div>
       {showScore ? (
         <div className="score">
-          <h1>You scored {score} out of {questions.length}</h1>
-          <button>See Results</button>
-          <button>Restart</button>
+          <h1>
+            You scored <span id="score"> {score}</span> out of{" "}
+            {questions.length}
+          </h1>
+          <Link to="/">
+            <button className="restartBtn">Restart</button>
+          </Link>
         </div>
       ) : (
         <>
           <div className="main">
-              <h2 className="question-number">Question {currentQuestion + 1} out of {questions.length}</h2>
+            <h2 className="question-number">
+              Question {currentQuestion + 1} out of {questions.length}
+            </h2>
             <h3 className="question">{questions[currentQuestion].question}</h3>
 
             <div className="answer">
